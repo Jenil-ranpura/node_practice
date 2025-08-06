@@ -4,6 +4,7 @@ let MenuRouter = require("./Routes/MenuItems.js");
 let HostelRouter = require("./Routes/HostelStudents.js");
 let body_parser = require("body-parser");
 let db = require("./db");
+require("dotenv").config();
 
 let app = express();
 app.use(body_parser.json());
@@ -28,7 +29,7 @@ app.get("/download", (req, res) => {
     res.send(obj);
 })
 
-let port = 3000;
+let port = process.env.PORT;
 
 app.listen(port, () => {
     console.log("Server Listening")

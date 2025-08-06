@@ -1,7 +1,8 @@
 let mongoose = require("mongoose");
+require("dotenv").config();
 
-let mongoURL = "mongodb://localhost:27017/cp";
-
+let mongoURL = process.env.URL;
+// let mongoURL = "mongodb+srv://user:jenil567@cluster0.acsauj2.mongodb.net/";
 mongoose.connect(mongoURL);
 
 
